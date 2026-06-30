@@ -23,12 +23,16 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://*.google.com/*"],
-      "js": ["content.js"]
+      "matches": [
+        "*://*.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
   ],
   "custom_config": {
     "target_url": "https://google.com",
-    "icon_path": "icon.png"
+    "favicon_query": "link[rel=\"icon\"]"
   }
 }
