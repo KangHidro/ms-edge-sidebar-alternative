@@ -11,17 +11,24 @@
   "background": {
     "service_worker": "background.js"
   },
-  "side_panel": {
-    "default_path": "background.js"
-  },
-  "name": "Google",
-  "custom_config": {
-    "target_url": "https://google.com"
-  },
   "icons": {
     "16": "icon.png",
     "32": "icon.png",
     "48": "icon.png",
     "128": "icon.png"
+  },
+  "name": "Google",
+  "host_permissions": [
+    "*://*.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["://.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "custom_config": {
+    "target_url": "https://google.com",
+    "icon_path": "icon.png"
   }
 }
